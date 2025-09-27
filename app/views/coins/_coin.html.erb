@@ -1,17 +1,14 @@
-<div id="<%= dom_id coin %>">
-  <p>
-    <strong>Description:</strong>
-    <%= coin.description %>
-  </p>
-
-  <p>
-    <strong>Acronym:</strong>
-    <%= coin.acronym %>
-  </p>
-
-  <p>
-    <strong>Url image:</strong>
-    <%= coin.url_image %>
-  </p>
-
-</div>
+<tr id="<%= dom_id coin %>">
+  <td><%= coin.description %></td>
+  <td><%= coin.acronym %></td>
+  <td>
+    <% if coin.url_image.present? %>
+      <%= image_tag coin.url_image, width:25, height:25 %>
+    <% end %>
+  </td>
+  <td>
+    <%= link_to "Show", coin %> |
+    <%= link_to "Edit", edit_coin_path(coin) %> |
+    <%= link_to "Destroy", coin, data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+  </td>
+</tr>
