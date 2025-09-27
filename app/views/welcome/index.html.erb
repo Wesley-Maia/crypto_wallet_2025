@@ -1,3 +1,5 @@
 <h1>Seja Bem-Vindo!</h1>
 <p>Wesley Maia</>
-<p> A data de hoje é: <%= Date.today%> </p>
+<p> A data de hoje é: <%= data_br(Date.today)%> </p>
+<%= link_to "Cadastro de Moedas", "/coins" %>
+<%= link_to "Cadastro de Moedas", coins_path %>
